@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Tour – Travel Yunnan</title>
+  <link rel="stylesheet" href="css/travel.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .booking-section {
+      max-width: 700px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    .booking-section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+    .booking-form label {
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .booking-form input,
+    .booking-form select,
+    .booking-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+    .booking-form textarea {
+      resize: vertical;
+    }
+    .booking-form button {
+      background-color: #2a9d8f;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: block;
+      margin: 2rem auto 0;
+    }
+    .booking-form button:hover {
+      background-color: #21867a;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#">All Trips ▼</a>
+        <div class="dropdown-content">
+          <a href="index.html#day-hikes">Day Hikes</a>
+          <a href="index.html#multi-day">Multi-Day</a>
+          <a href="index.html#culture-cuisine">Culture & Cuisine</a>
+        </div>
+      </div>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="booking-section">
+      <h2>Book Your Yunnan Tour</h2>
+      <form 
+        action="https://formsubmit.io/send/typodok@gmail.com" 
+        method="POST" 
+        class="booking-form"
+      >
+        <!-- Redirect after submission -->
+        <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html" />
+
+        <label>
+          Name:
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Email:
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Which tour are you interested in?
+          <select name="tour" id="tour">
+            <option value="Kunming Slow Life">Slow Life in Kunming</option>
+            <option value="Stones and Flowers">Stones and Flowers</option>
+            <option value="Food Market Delight">Food Market Delight</option>
+            <option value="Temple Run">Temple Run</option>
+            <option value="City Overlook">City Overlook</option>
+            <option value="Easy Hike">Easy Hike</option>
+            <option value="Rural Delicacies">Rural Delicacies</option>
+            <option value="Horse Ride">Horse Ride</option>
+            <option value="Custom Tour">Custom Tour</option>
+          </select>
+        </label>
+        <label>
+          Preferred Date(s):
+          <input type="text" name="dates" placeholder="e.g. August 10–12" />
+        </label>
+        <label>
+          Questions / Notes:
+          <textarea name="message" rows="5" placeholder="Let us know your preferences, group size, etc."></textarea>
+        </label>
+        <button type="submit">Send Booking Inquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 typodok. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#" target="_blank">Facebook</a>
+      <a href="#" target="_blank">Instagram</a>
+      <a href="#" target="_blank">Twitter</a>
+    </div>
+  </footer>
+
+  <script>
+    // Auto-select tour from URL param like ?tour=Slow%20Life%20in%20Kunming
+    const params = new URLSearchParams(window.location.search);
+    const tourFromUrl = params.get('tour');
+    if (tourFromUrl) {
+      const tourSelect = document.getElementById('tour');
+      if (tourSelect) {
+        for (let option of tourSelect.options) {
+          if (option.value.toLowerCase() === tourFromUrl.toLowerCase()) {
+            option.selected = true;
+            break;
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

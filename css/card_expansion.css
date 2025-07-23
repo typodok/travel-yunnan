@@ -1,0 +1,75 @@
+/* === Travel Card Expansion === */
+
+
+
+.travel-card.expanded {
+  height: auto;
+  max-height: none;
+  z-index: 10;
+}
+
+.card-details {
+  position: relative; /* no longer absolute */
+  margin-top: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  color: #fefefe;
+  backdrop-filter: blur(6px);
+  animation: fadeInSlideDown 0.5s ease-out forwards;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+.card-details p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.details-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #e9c46a;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.details-link:hover {
+  color: #f4a261;
+}
+
+@media (max-width: 768px) {
+  .card-details {
+    font-size: 0.95rem;
+    padding: 1rem;
+  }
+} 
+
+@media (max-width: 480px) {
+  .card-details {
+    font-size: 0.9rem;
+  }
+} 
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,205 @@
+/* ===================== Reset & Base ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+/* ===================== Layout ===================== */
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.block {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===================== Headings ===================== */
+.block h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+  transition:
+    transform 0.2s ease-out,
+    letter-spacing 0.2s ease-out,
+    color 0.2s ease-out;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.block:hover h1,
+.block.active h1 {
+  transform: scale(1.08);
+  letter-spacing: 1.5px;
+  color: #f0f0f0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+/* Wrap text content */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* Subheading styles */
+.block p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+/* Hover/Active: Subtle emphasis */
+.block:hover p,
+.block.active p {
+  transform: scale(1.03);
+  opacity: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* ===================== Background Colors ===================== */
+.travel {
+  background-color: #2a9d8f;
+}
+.game {
+  background-color: #264653;
+}
+.creative {
+  background-color: #e76f51;
+}
+
+/* ===================== Background Images ===================== */
+.travel .travel-bg,
+.game .game-bg,
+.creative .creative-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: 0;
+  mix-blend-mode: multiply;
+  transition: background-image 0.5s ease, opacity 1s ease, mix-blend-mode 0.5s ease;
+}
+
+/* On hover or active, reveal full image */
+.travel:hover .travel-bg,
+.game:hover .game-bg,
+.creative:hover .creative-bg,
+.block.active .travel-bg,
+.block.active .game-bg,
+.block.active .creative-bg {
+  opacity: 1;
+  mix-blend-mode: normal;
+}
+
+/* ===================== Dot Mesh Overlay ===================== */
+.travel::before,
+.game::before,
+.creative::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/dotmesh4.png');
+  background-repeat: repeat;
+  opacity: 0.2;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* Remove mesh on hover or active */
+.travel:hover::before,
+.game:hover::before,
+.creative:hover::before,
+.block.active::before {
+  opacity: 0;
+}
+
+/* ===================== Interactions ===================== */
+.block:hover {
+  filter: brightness(1.2);
+}
+.block.active h1 {
+ animation: glowPulse 1s infinite alternate ease-in-out;
+}
+@keyframes glowPulse {
+  0% {
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.2),
+      0 0 8px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .block {
+    height: 33vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .block h1 {
+    font-size: 3.5rem;
+  }
+}
+/* ========== Overlay Gradient Layer ========== */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+  opacity: 0;
+  z-index: 1; /* Between background image (z=0) and content (z=2) */
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* On hover or active tap, show overlay */
+.block:hover .overlay,
+.block.active .overlay {
+  opacity: 1;
+}
+
+/* ===================== Page Transition ===================== */
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000; /* Gets overwritten by JS */
+  opacity: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  /*backdrop-filter: blur(8px);*/
+  pointer-events: all;
+}

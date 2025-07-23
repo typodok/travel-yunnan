@@ -1,0 +1,620 @@
+/* ========== Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #264653;
+  line-height: 1.6;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ========== Navigation ========== */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem 0;
+  background: #2a9d8f;
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  position: relative;
+}
+
+.nav a {
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  letter-spacing: 0.05em;
+  background: #fefefe;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2a9d8f;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 100;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Apply flexbox to body */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content area should take up remaining space */
+main {
+  flex: 1;
+}
+
+/*========== Itinerary Wrapper ========== */
+
+.itinerary-wrapper {
+  display: flex;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  align-items: center; /* Vertically center children */
+}
+
+.itinerary-wrapper > div:first-child {
+  /* Timeline SVG container */
+  min-width: 220px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 7.5rem; /* Push SVG down a bit */
+}
+
+.itinerary-wrapper > div:last-child {
+  /* Details container */
+  flex: 1;
+  max-width: 800px;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+.itinerary-tooltip {
+  background: #fff;
+  color: #264653;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 0 12px rgba(42, 157, 143, 0.4), /* soft outer glow */
+    0 0 4px rgba(42, 157, 143, 0.6);  /* tighter core glow */
+  font-size: 1rem;
+  font-family: inherit;
+  max-width: 220px;
+  z-index: 1001;
+  pointer-events: none;
+  white-space: normal;
+}
+
+@media (max-width: 800px) {
+  .itinerary-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+  }
+  .itinerary-wrapper > div:first-child {
+    justify-content: center;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  .itinerary-wrapper > div:last-child {
+    padding: 1rem 0.5rem;
+    max-width: 100%;
+  }
+}
+
+
+/* ===== Carousel Styling ===== */
+
+.carousel-wrapper {
+  background: #fff;
+  padding: 0.5rem 0; /* Adjust spacing if needed */
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-section {
+  max-width: 100vw;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;    /* Allow top/bottom glow */
+  padding: 4rem 0; /* remove side padding */
+  margin-bottom: 0rem; /* add extra space before the next section */
+  background: #fefefe; /* optional: helps blend with cards if needed */
+}
+
+.carousel-inner {
+  overflow: visible;
+  position: relative;
+  padding: 0 3rem; /* adjusts spacing around arrows */
+}
+
+.carousel-container {
+  overflow: visible;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.travel-card {
+  flex: 0 0 calc(33.333% - 1.33rem);
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.carousel-btn.left {
+  left: 0;
+}
+
+.carousel-btn.right {
+  right: 0;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background: none; /* Remove background */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-btn img {
+  animation: greenPulse 2s infinite;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.carousel-btn img:hover {
+  opacity: 1;
+}
+
+@keyframes greenPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px #2a9d8f);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px #2a9d8f);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px #2a9d8f);
+  }
+}
+
+
+
+
+/* ========== Footer Styling ========== */
+.footer {
+  background-color: #aaadac;
+  color: #fff;
+  text-align: center;
+  padding: 3.4rem 2rem;
+  margin-top: auto;
+  position: relative;
+  background:#aaadac;
+  background-size: 6px 6px;
+  height: 12vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.footer-dotmesh-transition {
+  height: 6.2vh;
+  width: 100%;
+  background: 
+    url('../images/dotmesh4.png') repeat,
+    #aaadac;
+  background-size: 6px 6px;
+  filter: blur(0px);
+  background-attachment: fixed;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.footer p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.footer .social-links {
+  margin-top: 1rem;
+}
+
+.footer .social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.footer .social-links a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Travel Hero with Background Video ===== */
+.travel-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  min-height: 20vh;
+  height: 47vh;
+}
+
+.travel-hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-text-block {
+  z-index: 1;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 8rem;
+  line-height: 1.2;
+  color: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.travel-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    url('../images/dotmesh_travel.png') repeat,
+    rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  pointer-events: none;
+  background-size: 6px 6px;
+  filter: blur(0px);
+  background-attachment: fixed;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.travel-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 0;
+  background: rgba(255, 255, 255, 0);
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  z-index: -1;
+  pointer-events: none;
+  height: 60%;
+  width: 100%;
+}
+
+.hero-subtitle {
+  color: #fff;
+  font-size: 2.6rem;
+  text-align: center;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-top: 0.5rem;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+
+
+/* ===== Travel Section (cards with distinct backgrounds) ===== */
+.travel-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem 2rem;
+  background: #fefefe;
+}
+
+.travel-card {
+  position: relative;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  height: 230px;
+  max-height: 230px;
+  overflow: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeInSlide 1s ease-out forwards;
+}
+
+.travel-card.day-hikes {
+  background: url('../images/day-hike-background.jpg') center/cover no-repeat;
+}
+
+.travel-card.cuisine {
+  background: url('../images/cuisine-background.jpg') center/cover no-repeat;
+}
+
+.travel-card.culture {
+  background: url('../images/culture-background.jpg') center/cover no-repeat;
+}
+
+.travel-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.travel-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #fefefe;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.travel-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.travel-card:hover {
+  box-shadow: 0 0 25px 6px rgba(42, 157, 143, 0.6);
+  transform: translateY(-4px);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.travel-card,
+.travel-card * {
+  cursor: pointer;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Full details: Gallery Cards ===== */
+
+.gallery-carousel-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+  margin-top: 2rem;
+}
+
+.gallery-carousel-section {
+  padding: 2rem 0;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 3.5rem;
+  transition: transform 0.4s ease;
+  will-change: transform;
+  justify-content: flex-start;
+}
+
+.gallery-card {
+  flex: 0 0 calc(20vw - 1rem);
+  max-width: 400px;
+  height: calc((20vw - 1rem) * 0.5625); /* 16:9 ratio */
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-card img:hover {
+  transform: scale(1.02);
+}
+
+/* Image Modal = Large Gallery Pictures*/
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.image-modal.hidden {
+  display: none;
+}
+
+.image-modal .modal-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(0,0,0,0.4);
+  user-select: none;
+}
+
+.close-button:hover {
+  color: #e76f51;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}
+
+.modal-arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  user-select: none;
+}
+
+.modal-prev {
+  left: 1rem;
+}
+
+.modal-next {
+  right: 1rem;
+}
+
+.modal-arrow:hover {
+  color: #2a9d8f;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+.modal-image {
+  transition: opacity 0.15s ease;
+  opacity: 1;
+}
+
+.modal-image.fade-out {
+  opacity: 0;
+}
+
+.modal-image.fade-in {
+  opacity: 1;
+}
+
+/* ===== Booking Button on Tour Page ===== */
+
+.book-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #2a9d8f;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 0.6rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.book-button:hover {
+  background-color: #21867b;
+}
