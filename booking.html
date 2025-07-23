@@ -6,7 +6,9 @@
   <title>Book a Tour – Travel Yunnan</title>
   <link rel="stylesheet" href="css/travel.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/booking.css" />
   <style>
+    
     .booking-section {
       max-width: 700px;
       margin: 4rem auto;
@@ -72,48 +74,59 @@
   </header>
 
   <main>
+  <div class="background-carousel">
+    <div class="carousel-images">
+      <img src="images/travel_01.webp" class="carousel-slide active" />
+      <img src="images/travel_02.webp" class="carousel-slide" />
+      <img src="images/travel_03.webp" class="carousel-slide" />
+      <img src="images/travel_04.webp" class="carousel-slide" />
+      <img src="images/travel_05.webp" class="carousel-slide" />
+    </div>
+    <div class="gradient-overlay"></div>
     <section class="booking-section">
       <h2>Book Your Yunnan Tour</h2>
-      <form 
-        action="https://formsubmit.io/send/typodok@gmail.com" 
-        method="POST" 
-        class="booking-form"
-      >
-        <!-- Redirect after submission -->
-        <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html" />
+      <div class="booking-form">
+  <iframe 
+    data-tally-src="https://tally.so/embed/3q80Ng?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+    loading="lazy" 
+    width="100%" 
+    height="762" 
+    frameborder="0" 
+    marginheight="0" 
+    marginwidth="0" 
+    title="Book a Tour in Yunnan"
+  ></iframe>
+</div>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const tour = urlParams.get("tour");
+  const iframe = document.querySelector('iframe[data-tally-src]');
 
-        <label>
-          Name:
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          Email:
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Which tour are you interested in?
-          <select name="tour" id="tour">
-            <option value="Kunming Slow Life">Slow Life in Kunming</option>
-            <option value="Stones and Flowers">Stones and Flowers</option>
-            <option value="Food Market Delight">Food Market Delight</option>
-            <option value="Temple Run">Temple Run</option>
-            <option value="City Overlook">City Overlook</option>
-            <option value="Easy Hike">Easy Hike</option>
-            <option value="Rural Delicacies">Rural Delicacies</option>
-            <option value="Horse Ride">Horse Ride</option>
-            <option value="Custom Tour">Custom Tour</option>
-          </select>
-        </label>
-        <label>
-          Preferred Date(s):
-          <input type="text" name="dates" placeholder="e.g. August 10–12" />
-        </label>
-        <label>
-          Questions / Notes:
-          <textarea name="message" rows="5" placeholder="Let us know your preferences, group size, etc."></textarea>
-        </label>
-        <button type="submit">Send Booking Inquiry</button>
-      </form>
+  if (tour && iframe) {
+    const baseSrc = iframe.dataset.tallySrc.split('?')[0];
+    const newSrc = `${baseSrc}?tour=${encodeURIComponent(tour)}&alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
+    iframe.dataset.tallySrc = newSrc;
+  }
+</script>
+<script>
+  var d = document, 
+      w = "https://tally.so/widgets/embed.js", 
+      v = function() {
+        if (typeof Tally !== "undefined") Tally.loadEmbeds();
+        else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) {
+          e.src = e.dataset.tallySrc;
+        });
+      };
+  if (typeof Tally !== "undefined") v();
+  else if (d.querySelector('script[src="' + w + '"]') == null) {
+    var s = d.createElement("script");
+    s.src = w;
+    s.onload = v;
+    s.onerror = v;
+    d.body.appendChild(s);
+  }
+</script>
+
     </section>
   </main>
 
@@ -127,21 +140,6 @@
   </div>
 </footer>
 
-  <script>
-    // Auto-select tour from URL param like ?tour=Slow%20Life%20in%20Kunming
-    const params = new URLSearchParams(window.location.search);
-    const tourFromUrl = params.get('tour');
-    if (tourFromUrl) {
-      const tourSelect = document.getElementById('tour');
-      if (tourSelect) {
-        for (let option of tourSelect.options) {
-          if (option.value.toLowerCase() === tourFromUrl.toLowerCase()) {
-            option.selected = true;
-            break;
-          }
-        }
-      }
-    }
-  </script>
+  <script src="js/booking-carousel.js"></script>
 </body>
 </html>
