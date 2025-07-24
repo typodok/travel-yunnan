@@ -76,11 +76,13 @@
   <main>
   <div class="background-carousel">
     <div class="carousel-images">
-      <img src="images/travel_01.webp" class="carousel-slide active" />
-      <img src="images/travel_02.webp" class="carousel-slide" />
-      <img src="images/travel_03.webp" class="carousel-slide" />
-      <img src="images/travel_04.webp" class="carousel-slide" />
-      <img src="images/travel_05.webp" class="carousel-slide" />
+      <img src="images/landing/landing_01.webp" class="carousel-slide active" />
+      <img src="images/landing/landing_02.webp" class="carousel-slide" />
+      <img src="images/landing/landing_03.webp" class="carousel-slide" />
+      <img src="images/landing/landing_04.webp" class="carousel-slide" />
+      <img src="images/landing/landing_05.webp" class="carousel-slide" />
+      <img src="images/landing/landing_06.webp" class="carousel-slide" />
+      <img src="images/landing/landing_07.webp" class="carousel-slide" />
     </div>
     <div class="gradient-overlay"></div>
     <section class="booking-section">
@@ -105,7 +107,9 @@
   if (tour && iframe) {
     const baseSrc = iframe.dataset.tallySrc.split('?')[0];
     const newSrc = `${baseSrc}?tour=${encodeURIComponent(tour)}&alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
-    iframe.dataset.tallySrc = newSrc;
+
+    iframe.setAttribute('src', newSrc); // ✅ this line actually updates the iframe
+    iframe.dataset.tallySrc = newSrc;   // optional, only needed if Tally uses data-tally-src later
   }
 </script>
 <script>

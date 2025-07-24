@@ -1,0 +1,119 @@
+<svg width="300" height="420" viewBox="-35 0 300 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="timelineLine" x1="0" y1="30" x2="0" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2a9d8f"/>
+      <stop offset="1" stop-color="#264653"/>
+    </linearGradient>
+    <!-- Gradients for dots -->
+    <linearGradient id="dot30" x1="0" y1="30" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2a9d8f"/>
+      <stop offset="1" stop-color="#2a9d8f"/>
+    </linearGradient>
+    <linearGradient id="dot80" x1="0" y1="80" x2="0" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#249e8f"/>
+      <stop offset="1" stop-color="#249e8f"/>
+    </linearGradient>
+    <linearGradient id="dot130" x1="0" y1="130" x2="0" y2="130" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20908a"/>
+      <stop offset="1" stop-color="#20908a"/>
+    </linearGradient>
+    <linearGradient id="dot180" x1="0" y1="180" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1c8284"/>
+      <stop offset="1" stop-color="#1c8284"/>
+    </linearGradient>
+    <linearGradient id="dot230" x1="0" y1="230" x2="0" y2="230" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18747f"/>
+      <stop offset="1" stop-color="#18747f"/>
+    </linearGradient>
+    <linearGradient id="dot280" x1="0" y1="280" x2="0" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#15667a"/>
+      <stop offset="1" stop-color="#15667a"/>
+    </linearGradient>
+  </defs>
+  <style>
+    circle[r="8"]:hover {
+      filter: drop-shadow(0 0 8px #f4a261) drop-shadow(0 0 2px #e76f51);
+      stroke: #f4a261;
+      stroke-width: 3;
+      cursor: pointer;
+      transition: filter 0.2s, stroke 0.2s;
+    }
+    .highlight-text {
+      font-size: 22px !important;
+      font-weight: bold;
+      transition: font-size 0.2s;
+      fill: #e76f51;
+    }
+    .time-label {
+      fill: #999;
+      font-size: 16px;
+      font-family: sans-serif;
+      pointer-events: none;
+      transition: fill 0.3s;
+    }
+    .time-label.highlight-text {
+      fill: #e76f51;
+    }
+    .itinerary-tooltip {
+      background: #fff;
+      color: #264653;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      font-size: 1rem;
+      font-family: inherit;
+      max-width: 220px;
+      z-index: 1001;
+      pointer-events: none;
+      white-space: normal;
+    }
+  </style>
+
+  <line x1="40" y1="30" x2="40" y2="280" stroke="url(#timelineLine)" stroke-width="6" />
+
+  <g>
+    <text id="time-pickup" class="time-label" x="-35" y="36">9am</text>
+    <circle cx="40" cy="30" r="14" fill="#fff" stroke="url(#timelineLine)" stroke-width="4"/>
+    <circle id="dot-pickup" cx="40" cy="30" r="8" fill="url(#dot30)"/>
+    <text id="text-pickup" x="70" y="36" font-size="18" fill="#264653" font-family="sans-serif">Pickup</text>
+  </g>
+
+  <g>
+    <text id="time-stoneforest" class="time-label" x="-35" y="86">10am</text>
+    <circle cx="40" cy="80" r="14" fill="#fff" stroke="url(#timelineLine)" stroke-width="4"/>
+    <circle id="dot-stoneforest" cx="40" cy="80" r="8" fill="url(#dot80)"/>
+    <text id="text-stoneforest" x="70" y="86" font-size="18" fill="#264653" font-family="sans-serif">Stone Forest</text>
+  </g>
+
+  <g>
+    <text id="time-yilunch" class="time-label" x="-35" y="136">1pm</text>
+    <circle cx="40" cy="130" r="14" fill="#fff" stroke="url(#timelineLine)" stroke-width="4"/>
+    <circle id="dot-yilunch" cx="40" cy="130" r="8" fill="url(#dot130)"/>
+    <text id="text-yilunch" x="70" y="136" font-size="18" fill="#264653" font-family="sans-serif">Lunch</text>
+  </g>
+
+  <g>
+    <text id="time-rideback" class="time-label" x="-35" y="186">3pm</text>
+    <circle cx="40" cy="180" r="14" fill="#fff" stroke="url(#timelineLine)" stroke-width="4"/>
+    <circle id="dot-rideback" cx="40" cy="180" r="8" fill="url(#dot180)"/>
+    <text id="text-rideback" x="70" y="186" font-size="18" fill="#264653" font-family="sans-serif">Ride Back</text>
+  </g>
+
+  <g>
+    <text id="time-flower" class="time-label" x="-35" y="236">5pm</text>
+    <circle cx="40" cy="230" r="14" fill="#fff" stroke="url(#timelineLine)" stroke-width="4"/>
+    <circle id="dot-flower" cx="40" cy="230" r="8" fill="url(#dot230)"/>
+    <text id="text-flower" x="70" y="236" font-size="18" fill="#264653" font-family="sans-serif">Flower Market</text>
+  </g>
+
+  <g>
+    <text id="time-dinner" class="time-label" x="-35" y="286">7pm</text>
+    <circle cx="40" cy="280" r="14" fill="#fff" stroke="url(#timelineLine)" stroke-width="4"/>
+    <circle id="dot-dinner" cx="40" cy="280" r="8" fill="url(#dot280)"/>
+    <text id="text-dinner" x="70" y="286" font-size="18" fill="#264653" font-family="sans-serif">Free Evening</text>
+  </g>
+
+
+
+ 
+</svg>
