@@ -32,7 +32,7 @@ body, html {
 
 /* ===================== Headings ===================== */
 .block h1 {
-  font-size: 2.5rem;
+  font-size: 8.5rem;
   font-weight: 700;
   line-height: 1.2;
   position: relative;
@@ -60,9 +60,10 @@ body, html {
 
 /* Subheading styles */
 .block p {
-  font-size: 1rem;
+  font-size: 2rem;
   margin-top: 0.5rem;
   opacity: 0.8;
+  letter-spacing: 1.1px;
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
@@ -72,6 +73,7 @@ body, html {
 .block.active p {
   transform: scale(1.03);
   opacity: 1;
+  letter-spacing: 1.5px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
@@ -155,21 +157,18 @@ body, html {
 }
 
 /* ===================== Responsive ===================== */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .wrapper {
     flex-direction: column;
   }
-
+.block h1 {
+    font-size: 3.5rem;
+  }
   .block {
     height: 33vh;
   }
 }
 
-@media (min-width: 1024px) {
-  .block h1 {
-    font-size: 3.5rem;
-  }
-}
 /* ========== Overlay Gradient Layer ========== */
 .overlay {
   position: absolute;

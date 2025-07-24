@@ -1,11 +1,13 @@
     // Travel slideshow
   const travelBg = document.querySelector('.travel-bg');
   const travelImages = [
-    'images/travel_01.webp',
-    'images/travel_02.webp',
-    'images/travel_03.webp',
-    'images/travel_04.webp',
-    'images/travel_05.webp'
+    'images/landing/landing_01.webp',
+    'images/landing/landing_02.webp',
+    'images/landing/landing_03.webp',
+    'images/landing/landing_04.webp',
+    'images/landing/landing_05.webp',
+    'images/landing/landing_06.webp',
+    'images/landing/landing_07.webp'
   ];
   let travelIndex = 0;
 
@@ -17,7 +19,7 @@
   changeTravelBackground();
   setInterval(changeTravelBackground, 5000);
 
-  // Game slideshow
+  /* Game slideshow
   const gameBg = document.querySelector('.game-bg');
   const gameImages = [
     'images/dev_01.webp',
@@ -55,7 +57,7 @@ function changeCreativeBackground() {
 }
 
 changeCreativeBackground();
-setInterval(changeCreativeBackground, 5000);
+setInterval(changeCreativeBackground, 5000);*/
 
   // ========== Tap to Toggle for Mobile ==========
 
@@ -71,7 +73,7 @@ const isMobile = window.innerWidth < 768;
 
 // Apply to each section
 Object.keys(pages).forEach((key) => {
-  const block = document.querySelector(`.${key}`);
+  const block = document.querySelector(`.${key} .${key}-click-area`);
 
   block.addEventListener('click', (e) => {
     if (isMobile) {
