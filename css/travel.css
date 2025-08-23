@@ -618,3 +618,103 @@ main {
 .book-button:hover {
   background-color: #21867b;
 }
+
+.tours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* space between tours */
+  padding: 2rem 1rem;
+  max-width: 900px; /* keeps nice centered column */
+  margin: 0 auto;
+}
+
+.travel-card {
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  padding: 2rem;
+  min-height: 250px;      /* REMOVE this if it’s forcing overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  overflow: hidden;       /* keeps background neat */
+}
+
+.travel-card:hover {
+  transform: translateY(-4px);
+}
+
+.travel-card h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.travel-card p {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.details {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0,0,0,0.6);
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
+}
+
+.travel-card.expanded .details {
+  max-height: 500px;  /* big enough to fit your content */
+  opacity: 1;
+}
+
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: rgba(90, 90, 90, 0.75); /* darker, more solid background */
+  padding: 0.4rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600; /* bolder text */
+  color: #fff;
+  white-space: nowrap;
+  border: none; /* remove weak border */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4); /* helps readability */
+}
+
+.tag:hover {
+  background: rgba(90, 90, 0, 0.9);
+}
+
+.details-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.details-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}

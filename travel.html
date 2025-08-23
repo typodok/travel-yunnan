@@ -3,7 +3,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Travel Yunnan</title>
-  <link rel="stylesheet" href="css/travel.css" />
+  <link rel="stylesheet" href="css/landing.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/card_expansion.css" />
 </head>
@@ -36,50 +36,58 @@
       </div>
     </section>
 
-   <section class="carousel-wrapper">
-  <div class="carousel-section">
-    <div class="carousel-inner">
-      <button class="carousel-btn left" aria-label="Scroll left">
-        <img src="images/arrow_left.svg" alt="Previous" />
-      </button>
-
-      <div class="carousel-container">
-        <div class="carousel-track">
-          <!-- Travel cards -->
-          <div class="travel-card"
-          data-title-short="Slow Life in Kunming"
-          data-duration="Full-day (10 hrs)"
-          data-difficulty="Easy"
-          data-itinerary="Market walk · Courtyard lunch · Temple visit · Lakeside stroll · Countryside dinner · Hot springs bath"
-          data-link="kunming-slow-city.html"
-          style="background-image: url('images/thumbnails/temple-thumb.webp')">
-          <h1>Slow Life in Kunming</h1>
-          <p>Wander vibrant markets, sip coffee by lotus-covered lakes, and end your day soaking in natural hot springs. A slow travel day of local flavors, quiet temples, and everyday beauty in Yunnan’s capital.</p>
-        </div>
-            <div class="travel-card"
-          data-title-short="Stones and Flowers"
-          data-duration="Full-day (10 hrs)"
-          data-difficulty="Easy"
-          data-itinerary="Trip to the Stone Forest · Rustic Lunch · Flower Market · Dinner"
-          data-link="stones-flowers.html"
-          style="background-image: url('images/thumbnails/stone-thumb.webp')">
-            <h1>Stones and Flowers</h1>
-            <p>Explore surreal limestone peaks in the legendary Stone Forest, savor rustic Yi village flavors, and immerse yourself in the vibrant colors of Asia’s largest flower market. All in one unforgettable day.</p>
-          </div>
-          <div class="travel-card" style="background-image: url('images/thumbnails/custom-thumb.webp')">
-            <h1>Customized Tour</h1>
-            <p>Tailor your Yunnan journey to your dreams, from itinerary planning to boutique stays and personalized guiding, we craft immersive travel experiences shaped entirely by your interests and pace.</p>
-          </div>
-
-          </div>
-        </div>
-      </div>
-
-      <button class="carousel-btn right" aria-label="Scroll right">
-        <img src="images/arrow_right.svg" alt="Next" />
-      </button>
+<section class="tours-list">
+  <a href="kunming-slow-city.html" class="travel-card">
+    <div class="card-image">
+      <img src="images/thumbnails/temple-thumb.webp" alt="Slow Life in Kunming">
     </div>
-  </div>
+    <div class="card-content">
+      <h1>Slow Life in Kunming</h1>
+      <p>Wander vibrant markets, sip coffee by lotus-covered lakes, and end your day soaking in natural hot springs.</p>
+      <div class="details">
+        <p><strong>Itinerary:</strong> Market walk · Courtyard lunch · Temple visit · Lakeside stroll · Countryside dinner · Hot springs bath</p>
+      </div>
+      <div class="tags">
+        <span class="tag">Duration: Full-day (10 hrs)</span>
+        <span class="tag">Price: ¥800 / person</span>
+      </div>
+    </div>
+  </a>
+  
+  <!-- Repeat for other cards with same structure -->
+  <a href="stones-flowers.html" class="travel-card">
+    <div class="card-image">
+      <img src="images/thumbnails/stone-thumb.webp" alt="Stones and Flowers">
+    </div>
+    <div class="card-content">
+      <h1>Stones and Flowers</h1>
+      <p>Explore surreal limestone peaks in the legendary Stone Forest, savor rustic Yi village flavors, and immerse yourself in the vibrant colors of Asia's largest flower market.</p>
+      <div class="details">
+        <p><strong>Itinerary:</strong> Stone Forest · Rustic Lunch · Flower Market · Dinner</p>
+      </div>
+      <div class="tags">
+        <span class="tag">Duration: Full-day (10 hrs)</span>
+        <span class="tag">Price: ¥950 / person</span>
+      </div>
+    </div>
+  </a>
+  
+  <a href="customized-tour.html" class="travel-card">
+    <div class="card-image">
+      <img src="images/thumbnails/custom-thumb.webp" alt="Customized Tour">
+    </div>
+    <div class="card-content">
+      <h1>Customized Tour</h1>
+      <p>Tailor your Yunnan journey to your dreams, from itinerary planning to boutique stays and personalized guiding, we craft immersive travel experiences shaped entirely by your interests and pace.</p>
+      <div class="details">
+        <p><strong>Itinerary:</strong> Fully customized with you</p>
+      </div>
+      <div class="tags">
+        <span class="tag">Duration: Flexible</span>
+        <span class="tag">Price: Depends on trip</span>
+      </div>
+    </div>
+  </a>
 </section>
 
   </main>
@@ -94,7 +102,7 @@
     </div>
   </footer>
 
-  <script src="js/carousel.js"></script>
-  <script src="js/travel_responsive.js"></script>
+ 
+  <script src="js/card-expansion.js"></script>
 </body>
 </html>
