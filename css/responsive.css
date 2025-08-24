@@ -143,3 +143,66 @@
     height: 26vh;
   }
 }
+
+/* Responsive adjustments for hero text */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 4rem;
+    margin-bottom: 0.1rem;
+  }
+  
+  .destination-line {
+    margin-bottom: 0.5rem;
+    min-height: 4rem; /* Match the font size */
+  }
+  
+  .destination-text {
+    font-size: 4rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.8rem;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 0.05rem;
+  }
+  
+  .destination-line {
+    margin-bottom: 0.3rem;
+    min-height: 3rem;
+  }
+  
+  .destination-text {
+    font-size: 3rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .destination-line {
+    margin-bottom: 0.2rem;
+    min-height: 2.5rem;
+  }
+  
+  .destination-text {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    margin-top: 0;
+  }
+}

@@ -2,7 +2,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Travel Yunnan</title>
+  <title>Yunjian Travel</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="stylesheet" href="css/landing.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/card_expansion.css" />
@@ -12,86 +13,98 @@
     <nav class="nav">
       <a href="#">Home</a>
       <div class="dropdown">
-        <a href="#">All Trips ▼</a>
+        <a href="#">Our Services ▼</a>
         <div class="dropdown-content">
-          <a href="#day-hikes">Day Hikes</a>
-          <a href="#multi-day">Multi-Day</a>
-          <a href="#culture-cuisine">Culture & Cuisine</a>
+          <a href="travel-concierge.html">Travel Concierge</a>
+          <a href="local-experiences.html">Local Experiences</a>
+          <a href="bespoke-journeys.html">Bespoke Journeys</a>
         </div>
       </div>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
-
   <main>
     <section class="travel-hero">
       <div class="gradient-overlay"></div>
       <video autoplay loop muted playsinline>
         <source src="videos/background.mp4" type="video/mp4" />
       </video>
-       <div class="hero-text-block">
-        <h1 class="hero-title">Travel Yunnan</h1>
+      <div class="hero-text-block">
+        <h1 class="hero-title">Travel</h1>
+        <div class="destination-line">
+          <span class="destination-text" id="destination">China</span>
+        </div>
         <p class="hero-subtitle">with us</p>
       </div>
     </section>
-
-<section class="tours-list">
-  <a href="kunming-slow-city.html" class="travel-card">
-    <div class="card-image">
-      <img src="images/thumbnails/temple-thumb.webp" alt="Slow Life in Kunming">
-    </div>
-    <div class="card-content">
-      <h1>Slow Life in Kunming</h1>
-      <p>Wander vibrant markets, sip coffee by lotus-covered lakes, and end your day soaking in natural hot springs.</p>
-      <div class="details">
-        <p><strong>Itinerary:</strong> Market walk · Courtyard lunch · Temple visit · Lakeside stroll · Countryside dinner · Hot springs bath</p>
-      </div>
-      <div class="tags">
-        <span class="tag">Duration: Full-day (10 hrs)</span>
-        <span class="tag">Price: ¥800 / person</span>
-      </div>
-    </div>
-  </a>
-  
-  <!-- Repeat for other cards with same structure -->
-  <a href="stones-flowers.html" class="travel-card">
-    <div class="card-image">
-      <img src="images/thumbnails/stone-thumb.webp" alt="Stones and Flowers">
-    </div>
-    <div class="card-content">
-      <h1>Stones and Flowers</h1>
-      <p>Explore surreal limestone peaks in the legendary Stone Forest, savor rustic Yi village flavors, and immerse yourself in the vibrant colors of Asia's largest flower market.</p>
-      <div class="details">
-        <p><strong>Itinerary:</strong> Stone Forest · Rustic Lunch · Flower Market · Dinner</p>
-      </div>
-      <div class="tags">
-        <span class="tag">Duration: Full-day (10 hrs)</span>
-        <span class="tag">Price: ¥950 / person</span>
-      </div>
-    </div>
-  </a>
-  
-  <a href="customized-tour.html" class="travel-card">
-    <div class="card-image">
-      <img src="images/thumbnails/custom-thumb.webp" alt="Customized Tour">
-    </div>
-    <div class="card-content">
-      <h1>Customized Tour</h1>
-      <p>Tailor your Yunnan journey to your dreams, from itinerary planning to boutique stays and personalized guiding, we craft immersive travel experiences shaped entirely by your interests and pace.</p>
-      <div class="details">
-        <p><strong>Itinerary:</strong> Fully customized with you</p>
-      </div>
-      <div class="tags">
-        <span class="tag">Duration: Flexible</span>
-        <span class="tag">Price: Depends on trip</span>
-      </div>
-    </div>
-  </a>
-</section>
-
+    
+    <!-- Services Introduction -->
+    <section class="services-intro">
+      <h2>Discover China Your Way</h2>
+      <p>We offer three distinct ways to explore the beauty and culture of China</p>
+    </section>
+    
+    <section class="tours-list">
+      <!-- Travel Assistance Card (Featured) -->
+      <a href="travel-assistance.html" class="travel-card featured">
+        <div class="card-badge">Most Popular</div>
+        <div class="card-image">
+          <img src="images/thumbnails/assistance-thumb.webp" alt="Travel Assitance">
+        </div>
+        <div class="card-content">
+          <h1>Travel Assistance</h1>
+          <p>Complete travel support with planning, bookings, and 24/7 assistance throughout your journey.</p>
+          <div class="details">
+            <p><strong>Services:</strong> Custom itinerary planning · Hotel & restaurant bookings · 24/7 phone support · On-the-go recommendations · Local assistance</p>
+          </div>
+          <div class="tags">
+            <span class="tag">Ongoing Support</span>
+            <span class="tag">Personalized</span>
+            <span class="tag">24/7 Assistance</span>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Local Experiences Card -->
+      <a href="local-experiences.html" class="travel-card">
+        <div class="card-image">
+          <img src="images/thumbnails/temple-thumb.webp" alt="Local Experiences">
+        </div>
+        <div class="card-content">
+          <h1>Local Experiences</h1>
+          <p>Day trips with local guides offering authentic cultural experiences and insider knowledge.</p>
+          <div class="details">
+            <p><strong>Includes:</strong> Local expert guides · Photo tours · Cultural immersion · Half & full day options · Authentic local interactions</p>
+          </div>
+          <div class="tags">
+            <span class="tag">Day Trips</span>
+            <span class="tag">Local Guides</span>
+            <span class="tag">Cultural Focus</span>
+          </div>
+        </div>
+      </a>
+      
+      <!-- Custom Tours Card -->
+      <a href="customized-tours.html" class="travel-card">
+        <div class="card-image">
+          <img src="images/thumbnails/custom-thumb.webp" alt="Customized Tours">
+        </div>
+        <div class="card-content">
+          <h1>Customized Tours</h1>
+          <p>Completely customized tours designed around your preferences, with every detail handled for you.</p>
+          <div class="details">
+            <p><strong>Includes:</strong> Personalized planning · Private transportation · Dedicated guides · Luxury accommodations · All arrangements</p>
+          </div>
+          <div class="tags">
+            <span class="tag">Fully Customized</span>
+            <span class="tag">Private Service</span>
+            <span class="tag">All-Inclusive</span>
+          </div>
+        </div>
+      </a>
+    </section>
   </main>
-
   <div class="footer-dotmesh-transition"></div>
   <footer class="footer">
     <p>© 2025 typodok. All rights reserved.</p>
@@ -101,8 +114,8 @@
       <a href="#" target="_blank">Twitter</a>
     </div>
   </footer>
-
  
   <script src="js/card-expansion.js"></script>
+  <script src="js/destination-rotation.js"></script>
 </body>
 </html>
