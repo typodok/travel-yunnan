@@ -72,3 +72,74 @@
   z-index: 1;
   pointer-events: none;
 }
+
+/* Booking Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #264653;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2a9d8f;
+  box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.2);
+}
+
+.submit-btn {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 2rem auto 0;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #21867b;
+}
+
+.booking-confirmation {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(42, 157, 143, 0.1);
+  border-radius: 0.5rem;
+  border: 1px solid #2a9d8f;
+}
+
+.booking-confirmation h3 {
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .booking-section {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}

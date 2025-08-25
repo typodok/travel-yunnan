@@ -1,0 +1,632 @@
+/* ========== Base Styles for Travel Cards ========== */
+.travel-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 280px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.travel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 8px 24px rgba(0,0,0,0.15),
+    0 0 20px rgba(42, 157, 143, 0.4);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Featured Service Card */
+.travel-card.featured {
+  border: 2px solid #2a9d8f;
+  position: relative;
+  z-index: 1; /* Ensure it's above other elements */
+}
+
+.travel-card.featured:hover {
+  border: 2px solid #2a9d8f;
+}
+
+
+
+.card-badge {
+  position: absolute;
+  top: -12px; /* Adjusted position */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2a9d8f;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+  z-index: 3; /* Higher z-index to ensure visibility */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  white-space: nowrap;
+}
+
+.card-image {
+  flex: 0 0 35%;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.travel-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: #264653;
+  position: relative;
+  z-index: 2;
+}
+
+.travel-card h1 {
+  margin: 0 0 0.8rem 0;
+  font-size: 1.8rem;
+  color: #2a9d8f;
+  transition: color 0.3s ease;
+}
+
+.travel-card:hover h1 {
+  color: #21867b;
+}
+
+.travel-card p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.details {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.travel-card:hover .details {
+  background-color: rgba(42, 157, 143, 0.1);
+}
+
+.details p {
+  margin: 0 0 0.8rem 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.details ul {
+  margin: 0;
+  padding-left: 1.5rem; /* Add padding for bullet points */
+}
+
+.details ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.tag {
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.4rem 0.8rem;
+  border-radius: 2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.travel-card:hover .tag {
+  background: rgba(42, 157, 143, 0.2);
+  border-color: rgba(42, 157, 143, 0.5);
+  color: #21867b;
+}
+
+.book-now-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2a9d8f;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #21867b;
+  transform: translateY(-2px);
+}
+
+/* Ensure the button doesn't interfere with card expansion */
+.travel-card.expanded .book-now-btn {
+  margin-top: 1rem;
+}
+
+/* ========== Pricing Information Styles ========== */
+.pricing-info {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #dee2e6;
+}
+
+.discount-badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  border: 1px solid #4caf50;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.discount-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.discount-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.discount-text {
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.tiered-pricing {
+  background: #f8f9fa;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #e9ecef;
+}
+
+.tier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.tier:not(:last-child) {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tier-label {
+  color: #666;
+  font-weight: 500;
+}
+
+.tier-price {
+  color: #2a9d8f;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Update existing details padding to accommodate pricing info */
+.details {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.travel-card:hover .details {
+  background-color: rgba(42, 157, 143, 0.1);
+}
+
+/* Responsive adjustments for pricing info */
+@media (max-width: 768px) {
+  .discount-badge {
+    flex-direction: column;
+    text-align: center;
+    padding: 0.8rem;
+  }
+  
+  .discount-icon {
+    margin-right: 0;
+    margin-bottom: 0.3rem;
+  }
+  
+  .tiered-pricing {
+    padding: 0.8rem;
+  }
+  
+  .tier {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.3rem;
+  }
+  
+  .tier:not(:last-child) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .tier:not(:first-child) {
+    border-top: 1px solid #e9ecef;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .discount-text {
+    font-size: 0.8rem;
+  }
+  
+  .tier-price {
+    font-size: 1rem;
+  }
+}
+
+/* ========== Comparison Section ========== */
+.comparison-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+  position: relative;
+}
+.comparison-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.comparison-container h2 {
+  font-size: 2.8rem;
+  color: #2a9d8f;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+.comparison-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+.comparison-table {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background: white;
+}
+.table-header {
+  display: contents;
+}
+.table-header > div {
+  background: #2a9d8f;
+  color: white;
+  padding: 1.5rem 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+.table-header .feature-cell {
+  text-align: left;
+  border-top-left-radius: 1rem;
+}
+.table-header .level-cell:last-child {
+  border-top-right-radius: 1rem;
+}
+.price {
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  font-weight: normal;
+}
+.table-row {
+  display: contents;
+}
+.table-row:nth-child(odd) > div {
+  background: #f8f9fa;
+}
+.feature-cell, .level-cell {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+}
+.feature-cell {
+  font-weight: 600;
+  text-align: left;
+  padding-left: 2rem;
+}
+.level-cell {
+  text-align: center;
+  justify-content: center;
+}
+.included {
+  color: #2a9d8f;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.not-included {
+  color: #dee2e6;
+  font-size: 1.5rem;
+}
+
+/* ========== How It Works Section ========== */
+.how-it-works {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+}
+.how-it-works-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.how-it-works-container h2 {
+  font-size: 2.8rem;
+  color: #2a9d8f;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+.how-it-works-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+.step {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #2a9d8f, #264653);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+.step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+.step:hover::before {
+  transform: scaleX(1);
+}
+.step-number {
+  width: 60px;
+  height: 60px;
+  background: #2a9d8f;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem;
+}
+.step h3 {
+  font-size: 1.5rem;
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+}
+.step p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ========== Responsive adjustments ========== */
+
+@media (max-width: 768px) {
+  
+   .travel-card.featured .card-image {
+    padding-top: 10px; /* Reduce padding on mobile */
+  }
+  
+  .card-badge {
+    top: -8px;
+    padding: 0.3rem 1rem;
+    font-size: 0.75rem;
+  }
+  
+  .travel-card.featured .card-content {
+    padding-top: 1rem; /* Reduce padding on mobile */
+  }
+    .travel-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .card-image {
+    flex: 0 0 200px;
+    width: 100%;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .travel-card h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .travel-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  
+  .details {
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .details ul {
+    padding-left: 1.2rem; /* Adjust for mobile */
+  }
+  
+  .details ul li {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  .tags {
+    gap: 0.6rem;
+  }
+  
+  .tag {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+  }
+  
+  .comparison-table {
+    grid-template-columns: 1fr;
+    border-radius: 0;
+  }
+  
+  .table-header {
+    display: none;
+  }
+  
+  .table-row {
+    display: block;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+  
+  .feature-cell {
+    background: #2a9d8f;
+    color: white;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .level-cell {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    background: white;
+  }
+  
+  .level-cell::before {
+    content: attr(data-level);
+    font-weight: bold;
+    color: #2a9d8f;
+  }
+  
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-image {
+    flex: 0 0 180px;
+  }
+  
+  .card-content {
+    padding: 1.2rem;
+  }
+  
+  .travel-card h1 {
+    font-size: 1.3rem;
+  }
+  
+  .travel-card p {
+    font-size: 0.9rem;
+  }
+  
+  .details ul {
+    padding-left: 1rem; /* Further adjust for small screens */
+  }
+  
+  .details ul li {
+    font-size: 0.8rem;
+  }
+  
+  .tag {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .comparison-section, .how-it-works {
+    padding: 3rem 1rem;
+  }
+  
+  .comparison-container h2, .how-it-works-container h2 {
+    font-size: 2rem;
+  }
+  
+  .step {
+    padding: 2rem 1.5rem;
+  }
+  
+  .step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .step h3 {
+    font-size: 1.3rem;
+  }
+}

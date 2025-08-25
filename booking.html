@@ -3,147 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book a Tour – Travel Yunnan</title>
+  <title>Book Your Experience – Yunjian Travel</title>
   <link rel="stylesheet" href="css/travel.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/booking.css" />
-  <style>
-    
-    .booking-section {
-      max-width: 700px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: #ffffff;
-      border-radius: 1rem;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    }
-    .booking-section h2 {
-      text-align: center;
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-    .booking-form label {
-      display: block;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    .booking-form input,
-    .booking-form select,
-    .booking-form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-    }
-    .booking-form textarea {
-      resize: vertical;
-    }
-    .booking-form button {
-      background-color: #2a9d8f;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 0.5rem;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      display: block;
-      margin: 2rem auto 0;
-    }
-    .booking-form button:hover {
-      background-color: #21867a;
-    }
-  </style>
 </head>
 <body>
   <header class="hero">
     <nav class="nav">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="#">All Trips ▼</a>
+        <a href="#">Our Services ▼</a>
         <div class="dropdown-content">
-          <a href="index.html#day-hikes">Day Hikes</a>
-          <a href="index.html#multi-day">Multi-Day</a>
-          <a href="index.html#culture-cuisine">Culture & Cuisine</a>
+          <a href="travel-concierge.html">Travel Concierge</a>
+          <a href="local-experiences.html">Local Experiences</a>
+          <a href="bespoke-journeys.html">Bespoke Journeys</a>
         </div>
       </div>
-      <a href="index.html#about">About</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
-
   <main>
-  <div class="background-carousel">
-    <div class="carousel-images">
-      <img src="images/landing/landing_01.webp" class="carousel-slide active" />
-      <img src="images/landing/landing_02.webp" class="carousel-slide" />
-      <img src="images/landing/landing_03.webp" class="carousel-slide" />
-      <img src="images/landing/landing_04.webp" class="carousel-slide" />
-      <img src="images/landing/landing_05.webp" class="carousel-slide" />
-      <img src="images/landing/landing_06.webp" class="carousel-slide" />
-      <img src="images/landing/landing_07.webp" class="carousel-slide" />
+    <div class="background-carousel">
+      <div class="carousel-images">
+        <img src="images/landing/landing_01.webp" class="carousel-slide active" />
+        <img src="images/landing/landing_02.webp" class="carousel-slide" />
+        <img src="images/landing/landing_03.webp" class="carousel-slide" />
+        <img src="images/landing/landing_04.webp" class="carousel-slide" />
+        <img src="images/landing/landing_05.webp" class="carousel-slide" />
+        <img src="images/landing/landing_06.webp" class="carousel-slide" />
+        <img src="images/landing/landing_07.webp" class="carousel-slide" />
+      </div>
+      <div class="gradient-overlay"></div>
+      <section class="booking-section">
+        <h2 id="booking-title">Book Your Experience</h2>
+        <p id="booking-subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
+        
+        <div class="booking-form">
+          <form id="booking-form" action="https://formspree.io/f/your-form-id" method="POST">
+            <!-- Hidden fields to capture service type -->
+            <input type="hidden" id="service-type" name="service" value="">
+            <input type="hidden" id="service-level" name="level" value="">
+            <input type="hidden" id="tour-name" name="tour" value="">
+            
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="travelers">Number of Travelers *</label>
+              <select id="travelers" name="travelers" required>
+                <option value="">Select number</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5+">5+</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="dates">Travel Dates</label>
+              <input type="text" id="dates" name="dates" placeholder="Approximate dates if not confirmed">
+            </div>
+            
+            <div class="form-group">
+              <label for="duration">Duration</label>
+              <input type="text" id="duration" name="duration" placeholder="e.g., 3 days, 1 week">
+            </div>
+            
+            <div class="form-group" id="special-requests-group">
+              <label for="special-requests">Special Requests or Questions</label>
+              <textarea id="special-requests" name="special-requests" rows="4" placeholder="Tell us about your preferences, dietary restrictions, accessibility needs, etc."></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="how-heard">How did you hear about us?</label>
+              <select id="how-heard" name="how-heard">
+                <option value="">Select an option</option>
+                <option value="google">Google Search</option>
+                <option value="social">Social Media</option>
+                <option value="friend">Friend/Family Recommendation</option>
+                <option value="blog">Travel Blog</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Booking Request</button>
+          </form>
+          
+          <div class="booking-confirmation" id="booking-confirmation" style="display: none;">
+            <h3>Thank You!</h3>
+            <p>Your booking request has been submitted successfully. We'll get back to you within 24 hours to confirm details and payment.</p>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="gradient-overlay"></div>
-    <section class="booking-section">
-      <h2>Book Your Yunnan Tour</h2>
-      <div class="booking-form">
-  <iframe 
-    data-tally-src="https://tally.so/embed/3q80Ng?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-    loading="lazy" 
-    width="100%" 
-    height="762" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0" 
-    title="Book a Tour in Yunnan"
-  ></iframe>
-</div>
-<script>
-  const urlParams = new URLSearchParams(window.location.search);
-  const tour = urlParams.get("tour");
-  const iframe = document.querySelector('iframe[data-tally-src]');
-
-  if (tour && iframe) {
-    const baseSrc = iframe.dataset.tallySrc.split('?')[0];
-    const newSrc = `${baseSrc}?tour=${encodeURIComponent(tour)}&alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
-
-    iframe.setAttribute('src', newSrc); // ✅ this line actually updates the iframe
-    iframe.dataset.tallySrc = newSrc;   // optional, only needed if Tally uses data-tally-src later
-  }
-</script>
-<script>
-  var d = document, 
-      w = "https://tally.so/widgets/embed.js", 
-      v = function() {
-        if (typeof Tally !== "undefined") Tally.loadEmbeds();
-        else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) {
-          e.src = e.dataset.tallySrc;
-        });
-      };
-  if (typeof Tally !== "undefined") v();
-  else if (d.querySelector('script[src="' + w + '"]') == null) {
-    var s = d.createElement("script");
-    s.src = w;
-    s.onload = v;
-    s.onerror = v;
-    d.body.appendChild(s);
-  }
-</script>
-
-    </section>
   </main>
-
- <div class="footer-dotmesh-transition"></div>
-<footer class="footer">
-  <p>© 2025 typodok. All rights reserved.</p>
-  <div class="social-links">
-    <a href="#">Facebook</a>
-    <a href="#">Instagram</a>
-    <a href="#">Twitter</a>
-  </div>
-</footer>
-
+  
+  <div class="footer-dotmesh-transition"></div>
+  <footer class="footer">
+    <p>© 2025 typodok. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+  
   <script src="js/booking-carousel.js"></script>
+  <script>
+    // Parse URL parameters to pre-fill the form
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const service = urlParams.get('service');
+      const level = urlParams.get('level');
+      const tour = urlParams.get('tour');
+      
+      // Set hidden fields
+      if (service) document.getElementById('service-type').value = service;
+      if (level) document.getElementById('service-level').value = level;
+      if (tour) document.getElementById('tour-name').value = tour;
+      
+      // Update page title and subtitle based on service type
+      const titleElement = document.getElementById('booking-title');
+      const subtitleElement = document.getElementById('booking-subtitle');
+      
+      if (service === 'travel-plans') {
+        titleElement.textContent = 'Book Curated Travel Plans';
+        subtitleElement.textContent = 'Get your personalized travel itinerary in just 24 hours';
+      } else if (service === 'personalized-itinerary') {
+        titleElement.textContent = 'Book Personalized Itinerary';
+        subtitleElement.textContent = 'Let us create a custom journey based on your preferences';
+      } else if (service === 'travel-concierge') {
+        titleElement.textContent = 'Book Full Travel Concierge';
+        subtitleElement.textContent = 'Enjoy worry-free travel with 24/7 support throughout your journey';
+      } else if (service === 'local-experience') {
+        titleElement.textContent = 'Book Local Experience';
+        subtitleElement.textContent = 'Join our expert guides for an authentic local experience';
+      } else {
+        titleElement.textContent = 'Book Your Experience';
+        subtitleElement.textContent = 'Fill out the form below and we\'ll get back to you within 24 hours';
+      }
+      
+      // Handle form submission
+      const form = document.getElementById('booking-form');
+      const confirmation = document.getElementById('booking-confirmation');
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Here you would normally send the form data to your server
+        // For now, we'll just show the confirmation message
+        
+        // Hide the form and show confirmation
+        form.style.display = 'none';
+        confirmation.style.display = 'block';
+        
+        // In a real implementation, you would send the form data here
+        // This could be using Formspree, Netlify Forms, or your own backend
+      });
+    });
+  </script>
 </body>
 </html>
