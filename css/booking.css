@@ -136,6 +136,59 @@
   margin-bottom: 1rem;
 }
 
+.selected-tour {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(42, 157, 143, 0.1);
+  border-radius: 0.5rem;
+  border-left: 4px solid #2a9d8f;
+}
+
+.selected-tour h3 {
+  margin: 0;
+  color: #264653;
+  font-size: 1.2rem;
+}
+
+.selected-tour span {
+  font-weight: 600;
+  color: #2a9d8f;
+}
+
+.duration-display {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #2a9d8f;
+  font-weight: 500;
+}
+
+/* Flatpickr custom styling to match your theme */
+.flatpickr-calendar {
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.flatpickr-day.selected, 
+.flatpickr-day.startRange, 
+.flatpickr-day.endRange, 
+.flatpickr-day.selected.inRange, 
+.flatpickr-day.startRange.inRange, 
+.flatpickr-day.endRange.inRange, 
+.flatpickr-day.selected:focus, 
+.flatpickr-day.startRange:focus, 
+.flatpickr-day.endRange:focus, 
+.flatpickr-day.selected:hover, 
+.flatpickr-day.startRange:hover, 
+.flatpickr-day.endRange:hover {
+  background: #2a9d8f;
+  border-color: #2a9d8f;
+}
+
+.flatpickr-day.inRange {
+  background: rgba(42, 157, 143, 0.1);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .booking-section {
@@ -143,3 +196,4 @@
     padding: 1.5rem;
   }
 }
+

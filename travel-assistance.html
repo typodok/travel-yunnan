@@ -17,9 +17,9 @@
       <div class="dropdown">
         <a href="#">Our Services ▼</a>
         <div class="dropdown-content">
-          <a href="travel-concierge.html">Travel Concierge</a>
+          <a href="travel-assistance.html">Travel Assistance</a>
           <a href="local-experiences.html">Local Experiences</a>
-          <a href="bespoke-journeys.html">Bespoke Journeys</a>
+          <a href="custom-tours.html">Customized Tours</a>
         </div>
       </div>
       <a href="#about">About</a>
@@ -44,7 +44,7 @@
     <!-- Travel Concierge Introduction -->
     <section class="services-intro">
       <h2>Personalized Travel Assistance</h2>
-      <p>Choose the level of support that best fits your travel style - from curated itineraries to full concierge service</p>
+      <p>Choose the level of support that best fits your travel style - from curated itineraries to full concierge service.</p>
     </section>
     
     <section class="tours-list">
@@ -59,7 +59,7 @@
     <div class="details">
       <p><strong>What's Included:</strong></p>
       <ul>
-        <li>One-day to three-day, and themed itineraries in PDF format</li>
+        <li>One-day, location specific itineraries in PDF format</li>
         <li>Sightseeing routes, food recommendations, and transportation tips</li>
         <li>Insider notes on best photo spots and ideal times to avoid crowds</li>
         <li>Must-try local snacks and hidden gems</li>
@@ -75,7 +75,7 @@
 </div>
 
 <!-- Level 2: Personalized Itinerary -->
-<div class="travel-card">
+<div class="travel-card level-2-adjust">
   <div class="card-image">
     <img src="images/thumbnails/personalized-thumb.jpg" alt="Personalized Itinerary">
   </div>
@@ -100,7 +100,7 @@
       </div>
     </div>
     <div class="tags">
-      <span class="tag">Price: From $29/day</span>
+      <span class="tag">Price: From $10/day</span>
       <span class="tag">Custom Planning</span>
       <span class="tag">Booking Support</span>
     </div>
@@ -131,17 +131,17 @@
         <div class="tiered-pricing">
           <div class="tier">
             <span class="tier-label">First 3 days:</span>
-            <span class="tier-price">$55/day</span>
+            <span class="tier-price">$39/day</span>
           </div>
           <div class="tier">
             <span class="tier-label">Additional days:</span>
-            <span class="tier-price">$45/day</span>
+            <span class="tier-price">$29/day</span>
           </div>
         </div>
       </div>
     </div>
     <div class="tags">
-      <span class="tag">Price: From $55/day</span>
+      <span class="tag">Price: From $29/day</span>
       <span class="tag">24/7 Support</span>
       <span class="tag">Worry-Free Travel</span>
     </div>
@@ -150,50 +150,97 @@
 </div>
     </section>
     
-    <!-- Comparison Table -->
-    <section class="comparison-section">
-      <div class="comparison-container">
-        <h2>Service Comparison</h2>
-        <div class="comparison-table">
-          <div class="table-header">
-            <div class="feature-cell">Features</div>
-            <div class="level-cell">Level 1<br></div>
-            <div class="level-cell">Level 2<br></div>
-            <div class="level-cell">Level 3<br></div>
-          </div>
-          <div class="table-row">
-            <div class="feature-cell">Pre-made Itineraries</div>
-            <div class="level-cell included">✓</div>
-            <div class="level-cell included">✓</div>
-            <div class="level-cell included">✓</div>
-          </div>
-          <div class="table-row">
-            <div class="feature-cell">Personalized Planning</div>
-            <div class="level-cell not-included">✗</div>
-            <div class="level-cell included">✓</div>
-            <div class="level-cell included">✓</div>
-          </div>
-          <div class="table-row">
-            <div class="feature-cell">Hotel & Ticket Booking</div>
-            <div class="level-cell not-included">✗</div>
-            <div class="level-cell included">✓</div>
-            <div class="level-cell included">✓</div>
-          </div>
-          <div class="table-row">
-            <div class="feature-cell">Real-time Support</div>
-            <div class="level-cell not-included">✗</div>
-            <div class="level-cell not-included">✗</div>
-            <div class="level-cell included">✓</div>
-          </div>
-          <div class="table-row">
-            <div class="feature-cell">On-the-spot Adjustments</div>
-            <div class="level-cell not-included">✗</div>
-            <div class="level-cell not-included">✗</div>
-            <div class="level-cell included">✓</div>
-          </div>
-        </div>
+ <!-- Comparison Table -->
+<section class="comparison-section">
+  <div class="comparison-container">
+    <h2>Service Comparison</h2>
+    
+    <!-- Desktop Table -->
+    <div class="comparison-table">
+      <div class="table-header">
+        <div class="feature-cell">Features</div>
+        <div class="level-cell">Level 1<br>$5</div>
+        <div class="level-cell">Level 2<br>From $10/day</div>
+        <div class="level-cell">Level 3<br>From $29/day</div>
       </div>
-    </section>
+      <div class="table-row">
+        <div class="feature-cell">Pre-made Itineraries</div>
+        <div class="level-cell" data-level="Level 1">✓</div>
+        <div class="level-cell" data-level="Level 2">✓</div>
+        <div class="level-cell" data-level="Level 3">✓</div>
+      </div>
+      <div class="table-row">
+        <div class="feature-cell">Personalized Planning</div>
+        <div class="level-cell" data-level="Level 1">✗</div>
+        <div class="level-cell" data-level="Level 2">✓</div>
+        <div class="level-cell" data-level="Level 3">✓</div>
+      </div>
+      <div class="table-row">
+        <div class="feature-cell">Hotel & Ticket Booking</div>
+        <div class="level-cell" data-level="Level 1">✗</div>
+        <div class="level-cell" data-level="Level 2">✓</div>
+        <div class="level-cell" data-level="Level 3">✓</div>
+      </div>
+      <div class="table-row">
+        <div class="feature-cell">Real-time Support</div>
+        <div class="level-cell" data-level="Level 1">✗</div>
+        <div class="level-cell" data-level="Level 2">✗</div>
+        <div class="level-cell" data-level="Level 3">✓</div>
+      </div>
+      <div class="table-row">
+        <div class="feature-cell">On-the-spot Adjustments</div>
+        <div class="level-cell" data-level="Level 1">✗</div>
+        <div class="level-cell" data-level="Level 2">✗</div>
+        <div class="level-cell" data-level="Level 3">✓</div>
+      </div>
+    </div>
+    
+    <!-- Mobile-Friendly Comparison List -->
+    <div class="mobile-comparison">
+      <div class="service-card level-1">
+        <div class="service-header">
+          <div class="service-name">Level 1 - Curated Travel Plans</div>
+          <div class="service-price">$5</div>
+        </div>
+        <ul class="service-features">
+          <li>Pre-made Itineraries</li>
+          <li class="not-included">Personalized Planning</li>
+          <li class="not-included">Hotel & Ticket Booking</li>
+          <li class="not-included">Real-time Support</li>
+          <li class="not-included">On-the-spot Adjustments</li>
+        </ul>
+      </div>
+      
+      <div class="service-card level-2">
+        <div class="service-header">
+          <div class="service-name">Level 2 - Personalized Itinerary</div>
+          <div class="service-price">From $10/day</div>
+        </div>
+        <ul class="service-features">
+          <li>Pre-made Itineraries</li>
+          <li>Personalized Planning</li>
+          <li>Hotel & Ticket Booking</li>
+          <li class="not-included">Real-time Support</li>
+          <li class="not-included">On-the-spot Adjustments</li>
+        </ul>
+      </div>
+      
+      <div class="service-card level-3">
+        <div class="service-header">
+          <div class="service-name">Level 3 - Full Travel Concierge</div>
+          <div class="service-price">From $29/day</div>
+        </div>
+        <ul class="service-features">
+          <li>Pre-made Itineraries</li>
+          <li>Personalized Planning</li>
+          <li>Hotel & Ticket Booking</li>
+          <li>Real-time Support</li>
+          <li>On-the-spot Adjustments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
     
     <!-- How It Works -->
     <section class="how-it-works">

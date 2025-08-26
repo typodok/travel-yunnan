@@ -1,0 +1,566 @@
+/* Custom styles for the custom tours page */
+.custom-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  min-height: 20vh;
+  height: 50vh;
+}
+
+.custom-hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.custom-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    url('../images/dotmesh_travel.png') repeat,
+    rgba(38, 70, 83, 0.3);
+  z-index: -1;
+  pointer-events: none;
+  background-size: 6px 6px;
+  filter: blur(0px);
+  background-attachment: fixed;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* Added gradient overlay for seamless transition */
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.premium-section {
+  padding: 4rem 1rem 2rem 1rem; /* Reduced bottom padding */
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.premium-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.premium-intro h2 {
+  font-size: 2.8rem;
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.premium-intro h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+
+.premium-intro p {
+  font-size: 1.2rem;
+  color: #264653;
+  max-width: 800px;
+  margin: 2rem auto 0;
+  line-height: 1.6;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.feature-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.feature-card:hover .feature-image img {
+  transform: scale(1.05);
+}
+
+.feature-content {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #264653;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: #555;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Full-width gradient divider */
+.gradient-divider {
+  height: 4px;
+  background: linear-gradient(90deg, #2a9d8f, #264653, #2a9d8f);
+  background-size: 200% 100%;
+  animation: gradient-shift 8s ease infinite;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.pricing-section {
+  background: linear-gradient(to bottom, #f8f8fa 0%, #ffffff 100%);
+  padding: 4rem 2rem;
+  margin-top: 0; /* Removed top margin */
+}
+
+.pricing-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-container h2 {
+  font-size: 2.5rem;
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+}
+
+.pricing-container p {
+  font-size: 1.2rem;
+  color: #264653;
+  margin-bottom: 2rem;
+}
+
+.pricing-factors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.pricing-factor {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  width: 200px;
+  text-align: center;
+}
+
+.pricing-factor-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #2a9d8f;
+}
+
+.pricing-factor h4 {
+  font-size: 1.2rem;
+  color: #264653;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-factor p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.inquiry-form {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 4rem auto;
+}
+
+.inquiry-form h2 {
+  font-size: 2rem;
+  color: #264653;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #264653;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2a9d8f;
+  box-shadow: 0 0 0 2px rgba(42, 157, 143, 0.2);
+}
+
+.submit-btn {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 2rem auto 0;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #21867b;
+}
+
+/* Testimonial Section with Background Gradient */
+.testimonial-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #f8f8fa 0%, #ffffff 100%);
+  position: relative;
+}
+
+.testimonial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial-container h2 {
+  font-size: 2.8rem;
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.testimonial-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+
+.testimonial-container p {
+  font-size: 1.2rem;
+  color: #264653;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.testimonial-item {
+  background: white;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.testimonial-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #2a9d8f, #264653);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.testimonial-item:hover::before {
+  transform: scaleX(1);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.reviewer-flag {
+  font-size: 2.5rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  /* Add emoji-friendly font stack */
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", "EmojiOne Color", "Android Emoji", sans-serif;
+  /* Ensure text is centered */
+  text-align: center;
+  line-height: 60px;
+}
+
+/* Add a subtle border to make flags stand out */
+.reviewer-flag::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(42, 157, 143, 0.3);
+  pointer-events: none;
+}
+
+/* Add hover effect for flags */
+.testimonial-item:hover .reviewer-flag {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.reviewer-info {
+  flex-grow: 1;
+}
+
+.reviewer-info h3 {
+  font-size: 1.2rem;
+  color: #2a9d8f;
+  margin: 0 0 0.3rem 0;
+}
+
+.rating {
+  color: #f9a826;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.review-content {
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+}
+
+.review-tour {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.review-tour::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: #e9ecef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .pricing-factors {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature-image {
+    height: 180px;
+  }
+  
+  .testimonial-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .testimonial-container h2 {
+    font-size: 2.2rem;
+  }
+  
+  .testimonial-container p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .testimonial-item {
+    padding: 1.5rem;
+  }
+  
+  .review-header {
+    margin-bottom: 1rem;
+  }
+  
+  .reviewer-flag {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  
+  .reviewer-info h3 {
+    font-size: 1.1rem;
+  }
+  
+  .rating {
+    font-size: 0.9rem;
+  }
+  
+  .review-content {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .testimonial-section {
+    padding: 3rem 1rem;
+  }
+  
+  .testimonial-container h2 {
+    font-size: 1.9rem;
+  }
+  
+  .testimonial-container p {
+    font-size: 1rem;
+  }
+  
+  .testimonial-item {
+    padding: 1.2rem;
+  }
+  
+  .reviewer-flag {
+    font-size: 1.8rem;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+  }
+  
+  .reviewer-info h3 {
+    font-size: 1rem;
+  }
+  
+  .rating {
+    font-size: 0.85rem;
+  }
+  
+  .review-content {
+    font-size: 0.9rem;
+  }
+}

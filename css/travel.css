@@ -326,6 +326,119 @@ main {
   color: #21867b;
 }
 
+/* Original book-now-btn styles (keep these for any standalone buttons) */
+.book-now-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2a9d8f;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  line-height: 1.5;
+  height: auto;
+  box-sizing: border-box;
+}
+.book-now-btn:hover {
+  background-color: #21867b;
+  transform: translateY(-2px);
+}
+
+/* Ensure the button doesn't interfere with card expansion */
+.travel-card.expanded .book-now-btn {
+  margin-top: 1rem;
+}
+
+/* Add this to prevent the button from interfering with the link */
+.travel-card {
+  position: relative;
+}
+.book-now-btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* Additional styles for the dual buttons */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+  align-items: stretch; /* This ensures both buttons stretch to the same height */
+}
+
+/* Updated styles for buttons in the button group */
+.button-group .book-now-btn,
+.button-group .details-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 44px; /* Fixed height for consistency */
+  line-height: 1; /* Reset line-height */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Override any conflicting styles */
+  margin-top: 0 !important;
+  vertical-align: middle;
+  position: static; /* Override any position settings that might affect alignment */
+  z-index: auto; /* Reset z-index */
+}
+
+.button-group .book-now-btn {
+  background-color: #2a9d8f;
+  order: 2; /* Places Book Now on the right */
+}
+
+.button-group .book-now-btn:hover {
+  background-color: #21867b;
+  transform: translateY(-2px);
+}
+
+.button-group .details-btn {
+  background-color: #264653;
+  order: 1; /* Places Full Details on the left */
+}
+
+.button-group .details-btn:hover {
+  background-color: #1a3440;
+  transform: translateY(-2px);
+}
+
+/* Make sure card-content doesn't interfere with button alignment */
+.card-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  color: #264653;
+  position: relative;
+  z-index: 2;
+  /* Ensure button group is properly aligned */
+  align-items: stretch;
+}
+
+/* Responsive adjustments for buttons */
+@media (max-width: 480px) {
+  .button-group {
+    flex-direction: column;
+    align-items: stretch; /* Ensure buttons take full width on mobile */
+  }
+  
+  /* Reset order for mobile to maintain visual hierarchy */
+  .button-group .book-now-btn,
+  .button-group .details-btn {
+    order: initial;
+  }
+}
 /* ========== Reviews Section ========== */
 .reviews-section {
   padding: 5rem 2rem;
