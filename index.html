@@ -3,7 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Typodok</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Authentic China Travel Experiences | Yunjian Travel</title>
+  <meta name="description" content="Discover authentic China travel experiences with Yunjian Travel. We offer personalized travel assistance, local cultural experiences, and customized tours throughout China. Book your adventure today!" />
+  <meta name="keywords" content="China travel, Yunnan tours, Kunming experiences, travel assistance, local experiences, customized tours, China travel agency, cultural tours" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yunjian.space/" />
+  <meta property="og:title" content="Authentic China Travel Experiences | Yunjian Travel" />
+  <meta property="og:description" content="Discover authentic China travel experiences with Yunjian Travel. We offer personalized travel assistance, local cultural experiences, and customized tours throughout China." />
+  <meta property="og:image" content="https://yunjian.space/images/og-homepage.jpg" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://yunjian.space/" />
+  <meta property="twitter:title" content="Authentic China Travel Experiences | Yunjian Travel" />
+  <meta property="twitter:description" content="Discover authentic China travel experiences with Yunjian Travel. We offer personalized travel assistance, local cultural experiences, and customized tours throughout China." />
+  <meta property="twitter:image" content="https://yunjian.space/images/og-homepage.jpg" />
+  
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -14,8 +36,21 @@
   <div class="overlay"></div>
   <div class="content">
     <div class="travel-click-area">
-      <h1>Travel China</h1>
-      <p>with us</p>
+      <h1>Yunjian Travel</h1>
+      <p>Discover China Through Our Lens</p>
+      
+      <!-- Hidden SEO Content -->
+      <div class="seo-content" style="display: none;">
+        <h2>Authentic China Travel Experiences</h2>
+        <p>Discover authentic China travel experiences with Yunjian Travel. We offer personalized travel assistance, local cultural experiences, and customized tours throughout China. Book your adventure today!</p>
+        <p>Our services include:</p>
+        <ul>
+          <li>Travel Assistance - Complete travel support with planning, bookings, and 24/7 assistance</li>
+          <li>Local Experiences - Day trips with local guides offering authentic cultural experiences</li>
+          <li>Customized Tours - Completely personalized tours designed around your preferences</li>
+        </ul>
+        <p>Explore Yunnan, Kunming, and beyond with our expert guides who know the hidden gems of China.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -38,9 +73,56 @@
         <p>Art, design & experimental projects</p>
       </div>
     </section>
-  -->
-
+    -->
   </div>
+  
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Yunjian Travel",
+    "description": "Authentic China travel experiences including travel assistance, local experiences, and customized tours",
+    "url": "https://yunjian.space/",
+    "logo": "https://yunjian.space/favicon.png",
+    "image": "https://yunjian.space/images/og-homepage.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kunming",
+      "addressRegion": "Yunnan",
+      "addressCountry": "China"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+86-XXX-XXXX-XXXX",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Chinese"]
+    },
+    "sameAs": [
+      "https://www.facebook.com/yunjiantravel",
+      "https://www.instagram.com/yunjiantravel",
+      "https://www.twitter.com/yunjiantravel"
+    ],
+    "service": [
+      {
+        "@type": "Service",
+        "name": "Travel Assistance",
+        "description": "Complete travel support with planning, bookings, and 24/7 assistance throughout your journey in China."
+      },
+      {
+        "@type": "Service",
+        "name": "Local Experiences",
+        "description": "Day trips with local guides offering authentic cultural experiences and insider knowledge of China's hidden gems."
+      },
+      {
+        "@type": "Service",
+        "name": "Customized Tours",
+        "description": "Completely customized tours designed around your preferences, with every detail handled for you throughout China."
+      }
+    ]
+  }
+  </script>
+  
 <script src="js/main.js"></script>
 </body>
 </html>

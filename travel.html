@@ -33,12 +33,12 @@
         <a href="#">Our Services ▼</a>
         <div class="dropdown-content">
           <a href="travel-assistance.html">Travel Assistance</a>
-          <a href="local-experiences.html">Local Experiences</a>
-          <a href="custom-tours.html">Customized Tours</a>
+          <a href="#local-experiences">Local Experiences</a>
+          <a href="customized-tours.html">Customized Tours</a>
         </div>
       </div>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+       <a href="about.html">About</a>
+      <a href="about.html#contact">Contact</a>
     </nav>
   </header>
   <main>
@@ -83,25 +83,6 @@
         </div>
       </a>
       
-      <!-- Local Experiences Card -->
-      <a href="local-experiences.html" class="travel-card">
-        <div class="card-image">
-          <img src="images/thumbnails/temple-thumb.webp" alt="Local Experiences in China - Day trips with local guides offering authentic cultural experiences" title="Local Experiences Tours">
-        </div>
-        <div class="card-content">
-          <h2>Local Experiences</h2>
-          <p>Day trips with local guides offering authentic cultural experiences and insider knowledge of China's hidden gems.</p>
-          <div class="details">
-            <p><strong>Includes:</strong> Local expert guides · Photo tours · Cultural immersion · Half & full day options · Authentic local interactions</p>
-          </div>
-          <div class="tags">
-            <span class="tag">Day Trips</span>
-            <span class="tag">Local Guides</span>
-            <span class="tag">Cultural Focus</span>
-          </div>
-        </div>
-      </a>
-      
       <!-- Custom Tours Card -->
       <a href="customized-tours.html" class="travel-card">
         <div class="card-image">
@@ -120,6 +101,33 @@
           </div>
         </div>
       </a>
+
+      <!-- Local Experiences Card -->
+<div class="travel-card coming-soon">
+  <div class="card-image">
+    <img src="images/thumbnails/temple-thumb.webp" alt="Local Experiences in China - Day trips with local guides offering authentic cultural experiences" title="Local Experiences Tours">
+  </div>
+  <div class="card-content">
+    <h2>Local Experiences</h2>
+    <p>Day trips with local guides offering authentic cultural experiences and insider knowledge of China's hidden gems.</p>
+    <div class="details">
+      <p><strong>Includes:</strong> Local expert guides · Photo tours · Cultural immersion · Half & full day options · Authentic local interactions</p>
+    </div>
+    <div class="tags">
+      <span class="tag">Day Trips</span>
+      <span class="tag">Local Guides</span>
+      <span class="tag">Cultural Focus</span>
+    </div>
+  </div>
+  <!-- Overlay positioned as the last child of the card -->
+  <div class="coming-soon-overlay">
+    <div class="overlay-content">
+      <span class="coming-soon-text">Coming Soon</span>
+      <span class="notify-text">Notify me when available</span>
+    </div>
+  </div>
+</div>
+            
     </section>
   </main>
   <div class="footer-dotmesh-transition"></div>
@@ -134,6 +142,7 @@
  
   <script src="js/card-expansion.js"></script>
   <script src="js/destination-rotation.js"></script>
+  <script src="js/notify.js"></script>
   
   <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">

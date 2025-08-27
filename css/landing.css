@@ -572,6 +572,195 @@ main {
   color: #21867b;
 }
 
+/* ========== Coming Soon Overlay ========== */
+.travel-card.coming-soon {
+  position: relative;
+  cursor: default;
+  pointer-events: none;
+  /* Ensure the card itself doesn't have a z-index that conflicts */
+  z-index: 1;
+}
+
+.travel-card.coming-soon:hover {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.travel-card.coming-soon:hover .card-image img {
+  transform: none;
+}
+
+.travel-card.coming-soon .card-content h1,
+.travel-card.coming-soon .card-content h2 {
+  color: #2a9d8f;
+}
+
+.travel-card.coming-soon .card-content h1:hover,
+.travel-card.coming-soon .card-content h2:hover {
+  color: #2a9d8f;
+}
+
+.travel-card.coming-soon .details {
+  background: #f8f9fa;
+}
+
+.travel-card.coming-soon:hover .details {
+  background-color: #f8f9fa;
+}
+
+.travel-card.coming-soon .tag {
+  background: #e9ecef;
+  border-color: #dee2e6;
+  color: #495057;
+}
+
+.travel-card.coming-soon:hover .tag {
+  background: #e9ecef;
+  border-color: #dee2e6;
+  color: #495057;
+}
+
+.coming-soon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(42, 157, 143, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+  /* Ensure overlay is above all content */
+  z-index: 10;
+}
+
+.travel-card.coming-soon:hover .coming-soon-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  color: white;
+  padding: 1.5rem;
+  /* Ensure content is above overlay background */
+  z-index: 11;
+  position: relative;
+}
+
+.coming-soon-text {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.notify-text {
+  display: block;
+  font-size: 1rem;
+  opacity: 0.9;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+.notify-text:hover {
+  opacity: 1;
+}
+
+/* For mobile devices, show the overlay always */
+@media (max-width: 768px) {
+  .coming-soon-overlay {
+    opacity: 1;
+    background: rgba(42, 157, 143, 0.7);
+  }
+  
+  .coming-soon-text {
+    font-size: 1.5rem;
+  }
+  
+  .notify-text {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Notification Popup Styles */
+.notification-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.notification-content {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.notification-content h3 {
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.notification-content p {
+  margin-bottom: 1.5rem;
+  color: #264653;
+}
+
+.notification-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification-form input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.notification-form .submit-btn {
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.notification-form .submit-btn:hover {
+  background-color: #21867b;
+}
+
+.close-notification {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .services-intro {

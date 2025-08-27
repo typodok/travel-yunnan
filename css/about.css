@@ -1,0 +1,464 @@
+/* ========== About Section ========== */
+.about-section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+.about-image {
+  flex: 0 0 45%;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.about-image:hover img {
+  transform: scale(1.03);
+}
+.about-content {
+  flex: 1;
+}
+.about-content h2 {
+  font-size: 2.5rem;
+  color: #2a9d8f;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+.about-content h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+.about-content p {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #264653;
+}
+
+/* ========== Passions Section ========== */
+.passions-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+.section-header h2 {
+  font-size: 2.5rem;
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+.section-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+.section-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+.passions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.passion-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.passion-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+/* Updated styles for circular photos */
+.passion-photo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(42, 157, 143, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+}
+.passion-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.passion-card:hover .passion-photo img {
+  transform: scale(1.05);
+}
+.passion-card h3 {
+  font-size: 1.4rem;
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+}
+.passion-card p {
+  color: #555;
+  line-height: 1.6;
+} 
+
+/* ========== Mission Section ========== */
+.mission-section {
+  padding: 5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.mission-container {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid rgba(42, 157, 143, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+.mission-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #2a9d8f, #264653, #2a9d8f);
+  background-size: 200% 100%;
+  animation: gradient-shift 8s ease infinite;
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.mission-container h2 {
+  font-size: 2.5rem;
+  color: #2a9d8f;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+.mission-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+.mission-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.mission-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #264653;
+  margin-bottom: 1.5rem;
+}
+.mission-content ul {
+  text-align: left;
+  margin: 1.5rem auto;
+  padding-left: 1.5rem;
+  max-width: 600px;
+}
+.mission-content li {
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  color: #264653;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 0.5rem;
+}
+.mission-content li::before {
+  content: "•";
+  color: #2a9d8f;
+  font-weight: bold;
+  position: absolute;
+  left: -1rem;
+}
+
+/* ========== Contact Section ========== */
+.contact-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+}
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact-container h2 {
+  font-size: 2.5rem;
+  color: #2a9d8f;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+.contact-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #2a9d8f;
+  border-radius: 2px;
+}
+.contact-container > p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+.contact-methods {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.contact-method {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-method:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  background: rgba(42, 157, 143, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-icon img {
+  width: 30px;
+  height: 30px;
+}
+.contact-method h3 {
+  font-size: 1.3rem;
+  color: #2a9d8f;
+  margin-bottom: 0.5rem;
+}
+.contact-method p {
+  color: #555;
+  font-size: 1.1rem;
+}
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.contact-form-container h3 {
+  font-size: 1.8rem;
+  color: #2a9d8f;
+  margin-bottom: 1.5rem;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  transition: border-color 0.3s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2a9d8f;
+}
+.submit-btn {
+  background-color: #2a9d8f;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+.submit-btn:hover {
+  background-color: #21867b;
+}
+
+/* Responsive adjustments for contact section */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .contact-container h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-container > p {
+    font-size: 1rem;
+  }
+  
+  .contact-methods {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact-form-container {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 2rem 1rem;
+  }
+  
+  .contact-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-form-container h3 {
+    font-size: 1.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+  }
+}
+
+/* ========== Responsive Adjustments for About Page ========== */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-image {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section, .passions-section, .mission-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .section-header h2, .mission-container h2 {
+    font-size: 2rem;
+  }
+  
+  .section-header p {
+    font-size: 1rem;
+  }
+  
+  .about-content h2 {
+    font-size: 2rem;
+  }
+  
+  .about-content p, .mission-content p, .mission-content li {
+    font-size: 1rem;
+  }
+  
+  .passions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .passion-card {
+    padding: 1.5rem;
+  }
+  
+  .passion-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .passion-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .passion-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .mission-container {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section, .passions-section, .mission-section {
+    padding: 2rem 1rem;
+  }
+  
+  .section-header h2, .mission-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .about-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .passions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mission-container {
+    padding: 1.5rem;
+  }
+}
