@@ -7,7 +7,7 @@
     'images/landing/landing_04.webp',
     'images/landing/landing_05.webp',
     'images/landing/landing_06.webp',
-    'images/landing/landing_07.webp'
+    'images/landing/landing_07.webp',
   ];
   let travelIndex = 0;
 

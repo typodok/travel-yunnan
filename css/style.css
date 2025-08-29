@@ -1,3 +1,6 @@
+/* ===================== Google Fonts Import ===================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
 /* ===================== Reset & Base ===================== */
 * {
   margin: 0;
@@ -7,7 +10,7 @@
 
 body, html {
   height: 100%;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* ===================== Layout ===================== */
@@ -30,60 +33,127 @@ body, html {
   overflow: hidden;
 }
 
-/* ===================== Headings ===================== */
-.block h1 {
-  font-size: 8.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  position: relative;
-  z-index: 2;
-  transition:
-    transform 0.2s ease-out,
-    letter-spacing 0.2s ease-out,
-    color 0.2s ease-out;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+/* ===================== Logo Styling ===================== */
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.2s ease-out, filter 0.2s ease-out;
 }
 
-.block:hover h1,
-.block.active h1 {
-  transform: scale(1.08);
-  letter-spacing: 1.5px;
-  color: #f0f0f0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-/* Wrap text content */
-.content {
+/* ===================== Headings ===================== */
+.block h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 8.5rem;
+  font-weight: 700;
+  line-height: 1.1;
   position: relative;
   z-index: 2;
-  text-align: center;
+  margin-bottom: 0.8rem; /* Increased space between heading and subheader */
+  transition: transform 0.2s ease-out, letter-spacing 0.2s ease-out, color 0.2s ease-out;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 /* Subheading styles */
 .block p {
-  font-size: 2rem;
-  margin-top: 0.5rem;
-  opacity: 0.8;
-  letter-spacing: 1.1px;
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 1.2rem; /* Added padding to move text down */
+  opacity: 0.9;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, letter-spacing 0.2s ease-out;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-/* Hover/Active: Subtle emphasis */
+/* ===================== Content Layout ===================== */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.travel-click-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===================== Unified Hover Effects ===================== */
+.block:hover {
+  filter: brightness(1.2);
+}
+
+.block:hover .logo,
+.block.active .logo,
+.block:hover h1,
+.block.active h1,
 .block:hover p,
 .block.active p {
-  transform: scale(1.03);
-  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Logo-specific hover effects */
+.block:hover .logo,
+.block.active .logo {
+  filter: brightness(1.15) drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+/* Text-specific hover effects */
+.block:hover h1,
+.block.active h1 {
   letter-spacing: 1.5px;
+  color: #f0f0f0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.block:hover p,
+.block.active p {
+  opacity: 1;
+  letter-spacing: 3px;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Active state animation */
+.block.active h1 {
+  animation: glowPulse 1s infinite alternate ease-in-out;
+}
+
+@keyframes glowPulse {
+  0% {
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.2),
+      0 0 8px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.3);
+  }
 }
 
 /* ===================== Background Colors ===================== */
 .travel {
   background-color: #2a9d8f;
 }
+
 .game {
   background-color: #264653;
 }
+
 .creative {
   background-color: #e76f51;
 }
@@ -136,46 +206,13 @@ body, html {
   opacity: 0;
 }
 
-/* ===================== Interactions ===================== */
-.block:hover {
-  filter: brightness(1.2);
-}
-.block.active h1 {
- animation: glowPulse 1s infinite alternate ease-in-out;
-}
-@keyframes glowPulse {
-  0% {
-    text-shadow:
-      0 0 4px rgba(255, 255, 255, 0.2),
-      0 0 8px rgba(255, 255, 255, 0.1);
-  }
-  100% {
-    text-shadow:
-      0 0 10px rgba(255, 255, 255, 0.5),
-      0 0 20px rgba(255, 255, 255, 0.3);
-  }
-}
-
-/* ===================== Responsive ===================== */
-@media (max-width: 600px) {
-  .wrapper {
-    flex-direction: column;
-  }
-.block h1 {
-    font-size: 3.5rem;
-  }
-  .block {
-    height: 33vh;
-  }
-}
-
 /* ========== Overlay Gradient Layer ========== */
 .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
   opacity: 0;
-  z-index: 1; /* Between background image (z=0) and content (z=2) */
+  z-index: 1;
   transition: opacity 0.4s ease;
   pointer-events: none;
 }
@@ -190,7 +227,7 @@ body, html {
 .page-transition-overlay {
   position: fixed;
   inset: 0;
-  background: #000; /* Gets overwritten by JS */
+  background: #000;
   opacity: 0;
   z-index: 9999;
   pointer-events: none;
@@ -199,6 +236,32 @@ body, html {
 
 .page-transition-overlay.active {
   opacity: 1;
-  /*backdrop-filter: blur(8px);*/
   pointer-events: all;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 600px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  
+  .block {
+    height: 33vh;
+  }
+  
+  .block h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem; /* Adjusted for mobile */
+  }
+  
+  .block p {
+    font-size: 1.4rem;
+    letter-spacing: 1.5px;
+    padding-top: 0.8rem; /* Adjusted for mobile */
+  }
+  
+  .logo {
+    width: 120px;
+    margin-bottom: 0.3rem;
+  }
 }
