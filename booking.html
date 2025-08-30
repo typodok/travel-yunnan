@@ -211,18 +211,39 @@
         }
       });
       
-      // Handle form submission
-      const form = document.getElementById('booking-form');
-      const confirmation = document.getElementById('booking-confirmation');
+     // Handle form submission
+const form = document.getElementById('booking-form');
+const confirmation = document.getElementById('booking-confirmation');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Create a new FormData object
+  const formData = new FormData(form);
+  
+  // Submit the form using fetch with Netlify's endpoint
+  fetch('/', {
+    method: 'POST',
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(response => {
+    if (response.ok) {
+      // Show confirmation message
+      form.style.display = 'none';
+      confirmation.style.display = 'block';
       
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Netlify Forms will handle the form submission automatically
-        // Just show the confirmation message after submission
-        form.style.display = 'none';
-        confirmation.style.display = 'block';
-      });
+      // Scroll to confirmation message
+      confirmation.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      throw new Error('Network response was not ok.');
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('There was an error submitting your booking. Please try again.');
+  });
+});
     });
   </script>
 </body>
