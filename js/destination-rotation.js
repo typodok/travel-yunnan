@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const destinations = ['China', 'Shanghai', 'Yunnan', 'Beijing', 'Chongqing', 'Chengdu', ' Xi\'an', 'Guilin', 'Hangzhou', 'Shenzhen', 'Lijinag', 'Qinghai', 'Xingjiang']; 
+  const destinations = ['China', 'Shanghai', 'Yunnan', 'Beijing', 'Chongqing', 'Chengdu', ' Xi\'an', 'Guilin', 'Hangzhou', 'Shenzhen', 'Lijiang', 'Qinghai', 'Xinjiang']; 
   let currentIndex = 0;
   const destinationElement = document.getElementById('destination');
   let isTransitioning = false;
