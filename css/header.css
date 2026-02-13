@@ -1,0 +1,7 @@
+.coming-soon {
+  font-size: 0.7em;
+  color: #a8d5d0; /* A light, pleasant tint of #2a9d8f */
+  opacity: 0.9;  /* Optional: slightly fade it for a softer look */
+  font-weight: normal;
+  white-space: nowrap;
+}
